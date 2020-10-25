@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    {% for post in posts.all %}
+        <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+                <h1 class="card-title" style="margin-left: auto; margin-right: auto">{{ post.Post_title }}</h1>
+                <img src="{{ post.Post_image.url }}" style="max-width: 600px; max-height: 600px" class="card-img-top">
+                <div class="card-body">
+                    <p class="card-text">{{ post.Post_text }}</p>
+                    <p class="post-data">{{ post.Post_pub_date }}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
